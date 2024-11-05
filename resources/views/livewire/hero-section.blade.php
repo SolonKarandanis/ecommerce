@@ -11,19 +11,19 @@
         </p>
   
         <div class="flex flex-wrap justify-center gap-4 mt-8">
-          <a
-            class="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-            href="#"
-          >
-            Get Started
-          </a>
-  
-          <a
-            class="block w-full px-12 py-3 text-sm font-medium text-blue-600 rounded shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto"
-            href="#"
-          >
-            Learn More
-          </a>
+          @if (auth()->check())
+            <a
+              class="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+              href="/offer">
+              Redeem your offer Now!
+            </a>
+			    @else
+            <a
+              class="block w-full px-12 py-3 text-sm font-medium text-white bg-blue-600 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+              href="/auth/login">
+              Get Started
+            </a>
+          @endif
         </div>
       </div>
     </div>
